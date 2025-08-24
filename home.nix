@@ -11,12 +11,15 @@
 	pkgs.alacritty
 	pkgs.fira-code
 	pkgs.gh
+	pkgs.micro
+	pkgs.xclip
   ];
 
   home.file = {
 	".config/i3/config".source = dotfiles/i3;
 	".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
         ".config/alacritty/themes".source = dotfiles/alacritty-themes;
+	".bashrc".source = dotfiles/bashrc;
   };
 
   home.sessionVariables = {
