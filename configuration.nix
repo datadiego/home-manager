@@ -8,6 +8,13 @@
   boot.loader.grub.enable=true;
   boot.loader.grub.device="/dev/vda";
   boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.configurationLimit = 3;
+
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
 
   # permitimos paquetes no libres
   nixpkgs.config.allowUnfree=true;
@@ -15,6 +22,7 @@
   # configuración de red
   networking.hostName="nixos";
   networking.networkmanager.enable=true;
+
 
   # configuracion de idioma y localización
   time.timeZone="Europe/Madrid";
