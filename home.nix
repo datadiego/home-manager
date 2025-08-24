@@ -11,12 +11,20 @@
 	pkgs.rofi
 	pkgs.alacritty
 	pkgs.fira-code
+	pkgs.git
 	pkgs.gh
 	pkgs.micro
 	pkgs.xclip
 
 	pkgs.feh
   ];
+
+
+  programs.git = {
+  enable = true;
+  userName = "datadiego";
+  userEmail = "juandiegomariscal@gmail.com";
+};
 
   home.file = {
 	".config/i3/config".source = dotfiles/i3;
