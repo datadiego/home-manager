@@ -38,10 +38,10 @@
   	displayManager.lightdm.enable=true;
     windowManager.i3.package=pkgs.i3-gaps;
     windowManager.i3.enable=true;
-	videoDrivers = [ "modesetting" ];
-	displayManager.sessionCommands = ''
-	xrandr --output Virtual-1 --mode 1920x1200
-	'';
+	  videoDrivers = [ "modesetting" ];
+	  displayManager.sessionCommands = ''
+	  xrandr --output Virtual-1 --mode 1920x1200
+	  '';
   };
 
   # configuración del teclado
@@ -78,7 +78,7 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
-    firefox vscodium
+    firefox
     i3 i3status dmenu xterm alacritty
     
     git

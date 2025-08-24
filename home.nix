@@ -3,7 +3,7 @@
 {
   home.username = "datadiego";
   home.homeDirectory = "/home/datadiego";
-
+  home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = [
