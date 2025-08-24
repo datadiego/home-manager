@@ -32,16 +32,25 @@
   };
 
   # configuración de entorno gráfico
-  services.xserver.enable=true;
-  services.xserver.desktopManager.xfce.enable=false;
-  services.xserver.displayManager.lightdm.enable=true;
-  services.xserver.windowManager.i3.package=pkgs.i3-gaps;
-  services.xserver.windowManager.i3.enable=true;
+  #services.xserver.enable=true;
+  #services.xserver.desktopManager.xfce.enable=false;
+  #services.xserver.displayManager.lightdm.enable=true;
+  #services.xserver.windowManager.i3.package=pkgs.i3-gaps;
+  #services.xserver.windowManager.i3.enable=true;
 
   services.xserver.videoDrivers = [ "modesetting" ];
   services.xserver.displayManager.sessionCommands = ''
     xrandr --output Virtual-1 --mode 1920x1200
   '';
+
+  services.xserver = {
+  	enable=true;
+  	desktopManager.xfce.enable=false;
+  	displayManager.lightdm.enable=true;
+    windowManager.i3.package=pkgs.i3-gaps;
+    windowManager.i3.enable=true;
+
+  };
 
   # configuración del teclado
   services.xserver.xkb={
