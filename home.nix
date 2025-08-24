@@ -24,6 +24,7 @@
     ".config/alacritty/themes".source = dotfiles/alacritty-themes;
 	".bashrc".source = dotfiles/bashrc;
 	".config/micro/colorschemes/dracula.micro".source = dotfiles/dracula.micro;
+	".config/rofi/config.rasi".source = dotfiles/config.rasi;
   };
 
   home.sessionVariables = {
