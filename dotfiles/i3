@@ -11,7 +11,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id sh -c "sleep 1 && feh --bg-scale /home/datadiego/.config/home-manager/seele.jpg"
 
 #terminales transparentes
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+#exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 #pantallazos
 bindsym Print exec gnome-screenshot
@@ -156,8 +156,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# bar {
+#         status_command i3status
+# }
+
 bar {
-        status_command i3status
+    status_command i3blocks
+    colors {
+        background #1e1e2e
+        statusline #cdd6f4
+        separator  #585b70
+        focused_workspace  #89b4fa #1e1e2e #ffffff
+    }
+    font pango:JetBrains Mono 12
 }
 
 client.focused          #555555 #1c1c1c #ffffff #ff5555 #1c1c1c
@@ -175,4 +186,3 @@ gaps outer 5
 smart_gaps on
 
 for_window [class="Tk"] floating enable
-
