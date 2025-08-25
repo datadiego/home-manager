@@ -40,7 +40,7 @@ align=right
 [conexion]
 command=ip a show lan0 | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1
 interval=10
-color=#66ff66
+color=#FF79C6
 align=right
 
 [moñeco]

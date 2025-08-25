@@ -16,10 +16,10 @@
 	pkgs.micro
 	pkgs.xclip
 	pkgs.feh
-  pkgs.glow
-  pkgs.linode-cli
-  pkgs.bitwarden-cli
-  pkgs.bitwarden-desktop
+  	pkgs.glow
+  	pkgs.linode-cli
+  	pkgs.bitwarden-cli
+  	pkgs.bitwarden-desktop
   ];
 
   programs.git = {
