@@ -79,4 +79,4 @@ alias toclip="xclip -selection clipboard"
 MICRO_TRUECOLOR=1
 alias nano="micro"
 alias code="codium"
-alias gp="git commit -a"
+alias gp="git commit -a -m"
