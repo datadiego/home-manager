@@ -38,7 +38,7 @@ align=right
 
 # Estado de la red Ethernet (si estás usando una conexión por cable)
 [conexion]
-command=ip a show wlp3s0 | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1
+command=ip a show lan0 | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1
 interval=10
 color=#66ff66
 align=right
