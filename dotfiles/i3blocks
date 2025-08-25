@@ -37,15 +37,14 @@ color=#66ccff
 align=right
 
 # Estado de la red Ethernet (si estás usando una conexión por cable)
-[eth0]
-command=ip a | grep 'inet ' | awk '{print $2}' | cut -d/ -f1
+[conexion]
+command=ip a show wlp3s0 | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1
 interval=10
 color=#66ff66
 align=right
 
-# Indicador de sonido (si tienes `amixer` instalado)
-[sound]
-command=amixer get Master | awk -F'[][]' 'END { print $2 }'
+[moñeco]
+command=echo -n "♫ (｡♥‿♥｡) ♡"
 interval=1
-color=#ff6666
-align=right
+color=#ff99cc
+align=center
