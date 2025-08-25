@@ -1,6 +1,26 @@
 # i3blocks configuration file
 # (Este archivo suele estar en ~/.config/i3blocks/config)
 
+[server1]
+full_text="Servidor"
+interval=10000
+command=~/.config/i3blocks/scripts/server-check.sh "reddit.com"
+color=#ffffff
+align=center
+
+[server1]
+full_text="Servidor"
+interval=10000
+command=~/.config/i3blocks/scripts/server-check.sh "example.org"
+color=#ffffff
+align=center
+
+[moñeco]
+full_text="⁽⁽◝( • ω • )◜⁾⁾"
+interval=once
+color=#ffffff
+align=center
+
 # Fecha
 [date]
 command=date | awk '{print $1, $2, $3, $4}'
@@ -44,13 +64,9 @@ align=right
 
 # Estado de la red Ethernet (si estás usando una conexión por cable)
 [conexion]
-command=ip a show lan0 | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1
+command=ip -4 -o addr show scope global | awk '{print $4}' | cut -d'/' -f1
 interval=10
 color=#FF79C6
 align=right
 
-[moñeco]
-command=echo -n "♫ (｡♥‿♥｡) ♡"
-interval=1
-color=#ff99cc
-align=center
+
