@@ -55,7 +55,7 @@
   environment.systemPackages = with pkgs; [
   firefox
   home-manager
-  i3 i3status dmenu alacritty
+  i3 i3status dmenu xterm alacritty
   git gh
   vscodium
   ];
