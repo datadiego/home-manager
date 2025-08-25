@@ -15,21 +15,29 @@
 	pkgs.gh
 	pkgs.micro
 	pkgs.xclip
-
 	pkgs.feh
   ];
-
 
   programs.git = {
   enable = true;
   userName = "datadiego";
   userEmail = "juandiegomariscal@gmail.com";
 };
+programs.vscode.profiles.default.extensions = {
+  enable = true;
+  package = pkgs.vscodium;  # Asegúrate de que esté usando vscodium
+  extensions = with pkgs.vscode-extensions; [
+    ms-python.python        # Python
+    esbenp.prettier-vscode   # Prettier
+    jnoortheen.nix-ide
+
+  ];
+};
 
   home.file = {
 	".config/i3/config".source = dotfiles/i3;
 	".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
-    ".config/alacritty/themes".source = dotfiles/alacritty-themes;
+  ".config/alacritty/themes".source = dotfiles/alacritty-themes;
 	".bashrc".source = dotfiles/bashrc;
 	".config/micro/colorschemes/dracula.micro".source = dotfiles/dracula.micro;
 	".config/rofi/config.rasi".source = dotfiles/config.rasi;
