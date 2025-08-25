@@ -39,7 +39,7 @@ programs.vscode = {
     "workbench.colorTheme" = "Dracula Theme";
     "files.autoSave" = "afterDelay";
     "files.autoSaveDelay" = 1000;
-    "editor.fontFamily" = "monospace";
+    "editor.fontFamily" = "Fira Code";
   };
 };
 
