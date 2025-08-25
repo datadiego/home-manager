@@ -1,16 +1,22 @@
 # i3blocks configuration file
 # (Este archivo suele estar en ~/.config/i3blocks/config)
 
+# Fecha
+[date]
+command=date | awk '{print $1, $2, $3, $4}'
+interval=360000
+color=#ffffff
+
 # Reloj
 [clock]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%H:%M:%S'
 interval=1
 color=#ffffff
 align=center
 
 # Carga de la CPU
 [cpu]
-command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'
+command=top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print "CPU:" 100 - $1"%"}'
 interval=5
 color=#ffcc00
 align=left
