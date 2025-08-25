@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+
+let 
+  cyberPackages = import ./cyber-packages.nix { inherit pkgs; };
+in 
 {
   home.username = "datadiego";
   home.homeDirectory = "/home/datadiego";
@@ -7,21 +11,25 @@
   home.stateVersion = "24.11"; 
 
   home.packages = [
-	pkgs.vscodium
-	pkgs.rofi
-	pkgs.alacritty
-	pkgs.fira-code
-	pkgs.git
-	pkgs.gh
-	pkgs.micro
-	pkgs.xclip
-	pkgs.feh
+	  pkgs.vscodium
+	  pkgs.rofi
+	  pkgs.alacritty
+	  pkgs.fira-code
+	  pkgs.git
+	  pkgs.gh
+	  pkgs.micro
+  	pkgs.xclip
+	  pkgs.feh
   	pkgs.glow
   	pkgs.linode-cli
   	pkgs.bitwarden-cli
   	pkgs.bitwarden-desktop
+    pkgs.xxd
+    pkgs.curl
+    pkgs.wget
+    pkgs.jq
+  ] ++ cyberPackages;
 
-  ];
   programs.git = {
   enable = true;
   userName = "datadiego";
@@ -44,19 +52,23 @@ programs.vscode = {
     "files.autoSave" = "afterDelay";
     "files.autoSaveDelay" = 1000;
     "editor.fontFamily" = "Fira Code";
+    "editor.minimap.enabled" = false;
+    "editor.tabSize" = 2;
+    "editor.formatOnSave"= true;
+    "workbench.sideBar.location"= "right";
   };
 };
 
   home.file = {
-	".config/i3/config".source = dotfiles/i3;
-	".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
-  ".config/alacritty/themes".source = dotfiles/alacritty-themes;
-	".bashrc".source = dotfiles/bashrc;
-	".config/micro/colorschemes/dracula.micro".source = dotfiles/dracula.micro;
-	".config/rofi/config.rasi".source = dotfiles/config.rasi;
-  ".config/i3blocks/config".source = dotfiles/i3blocks;
-  ".config/i3blocks/scripts/server-check.sh".source = scripts/server-check.sh;
-  ".config/i3blocks/scripts/bateria.sh".source = scripts/bateria.sh;
+	  ".config/i3/config".source = dotfiles/i3;
+	  ".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
+    ".config/alacritty/themes".source = dotfiles/alacritty-themes;
+	  ".bashrc".source = dotfiles/bashrc;
+	  ".config/micro/colorschemes/dracula.micro".source = dotfiles/dracula.micro;
+	  ".config/rofi/config.rasi".source = dotfiles/config.rasi;
+    ".config/i3blocks/config".source = dotfiles/i3blocks;
+    ".config/i3blocks/scripts/server-check.sh".source = scripts/server-check.sh;
+    ".config/i3blocks/scripts/bateria.sh".source = scripts/bateria.sh;
   };
 
   home.sessionVariables = {

@@ -6,7 +6,7 @@ if [ -z "$HOST" ]; then
 fi
 
 if ping -c 1 -W 1 "$HOST" > /dev/null; then
-    echo "🟢 $HOST"
+    echo "✨ $HOST"
 else
-    echo "🔴 $HOST"
+    echo "💀 $HOST"
 fi

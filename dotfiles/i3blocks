@@ -1,20 +1,13 @@
-[server1]
-interval=10000
-command=~/.config/i3blocks/scripts/server-check.sh "reddit.com"
-color=#bd93f9     # morado para servidor
-align=center
-
-[server2]
-full_text="Servidor"
-interval=10000
-command=~/.config/i3blocks/scripts/server-check.sh "example.org"
-color=#bd93f9     # morado también para mantener consistencia
-align=center
-
 [moñeco]
 full_text="⁽⁽◝( • ω • )◜⁾⁾"
 interval=once
 color=#f8f8f2     # blanco suave
+align=center
+
+[server1]
+interval=10000
+command=~/.config/i3blocks/scripts/server-check.sh "cyberbunny.online"
+color=#bd93f9     # morado para servidor
 align=center
 
 [date]
@@ -29,10 +22,11 @@ color=#8be9fd     # azul para el reloj
 align=center
 
 [mem]
-command=free -h | grep Mem | awk '{print $3 "/" $2}'
+command=free -k | awk '/Mem/ {used=$3/(1024*1024); total=$2/(1024*1024); percent=used*100/total; printf "%.1fG / %.1fG (%.0f%%)\n", used, total, percent}'
 interval=10
-color=#50fa7b     # verde para memoria
+color=#50fa7b
 align=left
+
 
 [battery]
 full_text="Bateria: "
