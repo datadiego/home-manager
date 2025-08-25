@@ -2,7 +2,6 @@
 # (Este archivo suele estar en ~/.config/i3blocks/config)
 
 [server1]
-full_text="Servidor"
 interval=10000
 command=~/.config/i3blocks/scripts/server-check.sh "reddit.com"
 color=#ffffff
@@ -50,16 +49,10 @@ align=left
 
 # Estado de la batería
 [battery]
-command=cat /sys/class/power_supply/BAT0/capacity
+full_text="Bateria: "
+command=~/.config/i3blocks/scripts/bateria.sh
 interval=60
 color=#ff6600
-align=right
-
-# Conexión Wi-Fi
-[network]
-command=iwgetid -r
-interval=10
-color=#66ccff
 align=right
 
 # Estado de la red Ethernet (si estás usando una conexión por cable)
