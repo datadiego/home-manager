@@ -11,6 +11,7 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
+  services.upower.enable = true;
 
   time.timeZone = "Europe/Madrid";
 

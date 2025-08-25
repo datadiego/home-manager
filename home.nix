@@ -20,8 +20,8 @@
   	pkgs.linode-cli
   	pkgs.bitwarden-cli
   	pkgs.bitwarden-desktop
-  ];
 
+  ];
   programs.git = {
   enable = true;
   userName = "datadiego";

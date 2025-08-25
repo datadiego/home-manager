@@ -9,6 +9,7 @@
   boot.loader.grub.device="/dev/vda";
   boot.loader.grub.useOSProber = true;
   boot.loader.systemd-boot.configurationLimit = 3;
+  services.upower.enable = true;
 
   nix.gc = {
     automatic = true;
