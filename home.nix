@@ -4,7 +4,7 @@
   home.username = "datadiego";
   home.homeDirectory = "/home/datadiego";
   home.enableNixpkgsReleaseCheck = false;
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; 
 
   home.packages = [
 	pkgs.vscodium
@@ -16,6 +16,9 @@
 	pkgs.micro
 	pkgs.xclip
 	pkgs.feh
+  pkgs.linode-cli
+  pkgs.bitwarden-cli
+  pkgs.bitwarden-desktop
   ];
 
   programs.git = {
