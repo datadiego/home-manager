@@ -10,6 +10,7 @@ in
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "24.11"; 
 
+# Paquetes
   home.packages = [
 	  pkgs.vscodium
 	  pkgs.rofi
@@ -30,22 +31,17 @@ in
     pkgs.jq
   ] ++ cyberPackages;
 
+# Configuración Git
   programs.git = {
-  enable = true;
-  userName = "datadiego";
-  userEmail = "juandiegomariscal@gmail.com";
+    enable = true;
+    userName = "datadiego";
+    userEmail = "juandiegomariscal@gmail.com";
 };
+
+# Configuración Codium
 programs.vscode = {
   enable = true;
-  package = pkgs.vscodium;  # Asegúrate de que esté usando vscodium
-  profiles.default.extensions = with pkgs.vscode-extensions; [
-    jnoortheen.nix-ide
-    ms-python.python
-    ritwickdey.liveserver
-    mechatroner.rainbow-csv
-    tomoki1207.pdf
-    dracula-theme.theme-dracula
-  ];
+  package = pkgs.vscodium;
 
   profiles.default.userSettings = {
     "workbench.colorTheme" = "Dracula Theme";
@@ -57,8 +53,19 @@ programs.vscode = {
     "editor.formatOnSave"= true;
     "workbench.sideBar.location"= "right";
   };
+
+# Extensiones
+  profiles.default.extensions = with pkgs.vscode-extensions; [
+    jnoortheen.nix-ide
+    ms-python.python
+    ritwickdey.liveserver
+    mechatroner.rainbow-csv
+    tomoki1207.pdf
+    dracula-theme.theme-dracula
+  ];
 };
 
+# Dotfiles
   home.file = {
 	  ".config/i3/config".source = dotfiles/i3;
 	  ".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
