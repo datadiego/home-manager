@@ -23,13 +23,24 @@
   userName = "datadiego";
   userEmail = "juandiegomariscal@gmail.com";
 };
-programs.vscode.profiles.default.extensions = {
+programs.vscode = {
   enable = true;
   package = pkgs.vscodium;  # Asegúrate de que esté usando vscodium
-  extensions = with pkgs.vscode-extensions; [
+  profiles.default.extensions = with pkgs.vscode-extensions; [
     jnoortheen.nix-ide
     ms-python.python
+    ritwickdey.liveserver
+    mechatroner.rainbow-csv
+    tomoki1207.pdf
+    dracula-theme.theme-dracula
   ];
+
+  profiles.default.userSettings = {
+    "workbench.colorTheme" = "Dracula Theme";
+    "files.autoSave" = "afterDelay";
+    "files.autoSaveDelay" = 1000;
+    "editor.fontFamily" = "monospace";
+  };
 };
 
   home.file = {
