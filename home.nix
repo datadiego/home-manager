@@ -27,8 +27,8 @@ programs.vscode.profiles.default.extensions = {
   enable = true;
   package = pkgs.vscodium;  # Asegúrate de que esté usando vscodium
   extensions = with pkgs.vscode-extensions; [
-    
-
+    jnoortheen.nix-ide
+    ms-python.python
   ];
 };
 
