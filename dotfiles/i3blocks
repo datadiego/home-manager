@@ -1,58 +1,48 @@
-# i3blocks configuration file
-# (Este archivo suele estar en ~/.config/i3blocks/config)
-
 [server1]
 interval=10000
 command=~/.config/i3blocks/scripts/server-check.sh "reddit.com"
-color=#ffffff
+color=#bd93f9     # morado para servidor
 align=center
 
 [server2]
 full_text="Servidor"
 interval=10000
 command=~/.config/i3blocks/scripts/server-check.sh "example.org"
-color=#ffffff
+color=#bd93f9     # morado también para mantener consistencia
 align=center
 
 [moñeco]
 full_text="⁽⁽◝( • ω • )◜⁾⁾"
 interval=once
-color=#ffffff
+color=#f8f8f2     # blanco suave
 align=center
 
-# Fecha
 [date]
 command=date | awk '{print $1, $2, $3, $4}'
 interval=360000
-color=#ffffff
+color=#f8f8f2     # blanco suave
 
-# Reloj
 [clock]
 command=date '+%H:%M:%S'
 interval=1
-color=#ffffff
+color=#8be9fd     # azul para el reloj
 align=center
 
-# Memoria utilizada
 [mem]
 command=free -h | grep Mem | awk '{print $3 "/" $2}'
 interval=10
-color=#00ff00
+color=#50fa7b     # verde para memoria
 align=left
 
-# Estado de la batería
 [battery]
 full_text="Bateria: "
 command=~/.config/i3blocks/scripts/bateria.sh
 interval=60
-color=#ff6600
+color=#ffb86c     # naranja para batería
 align=right
 
-# Estado de la red Ethernet (si estás usando una conexión por cable)
 [conexion]
 command=ip -4 -o addr show scope global | awk '{print $4}' | cut -d'/' -f1
 interval=10
-color=#FF79C6
+color=#ff79c6     # rosado para red (igual que en tu config original)
 align=right
-
-
