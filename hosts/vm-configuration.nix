@@ -10,6 +10,9 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.systemd-boot.configurationLimit = 3;
   services.upower.enable = true;
+  boot.kernelParams = [ "video=1920x1200" ];
+  boot.loader.grub.gfxmodeEfi = "1920x1200";
+
 
   nix.gc = {
     automatic = true;
@@ -58,7 +61,7 @@ services.udev.extraRules = ''
   services.xserver = {
   	enable=true;
   	#desktopManager.xfce.enable=false;
-  	displayManager.lightdm.enable=true;
+  	displayManager.lightdm.enable=false;
     windowManager.i3.package=pkgs.i3-gaps;
     windowManager.i3.enable=true;
 	  videoDrivers = [ "modesetting" ];
@@ -66,6 +69,8 @@ services.udev.extraRules = ''
 	  xrandr --output Virtual-1 --mode 1920x1200
 	  '';
   };
+  services.displayManager.ly.enable=true;
+
 
   # configuración del teclado
   services.xserver.xkb={
@@ -97,34 +102,6 @@ services.udev.extraRules = ''
     extraGroups=[ "networkmanager" "wheel"];
   };
 
-  # services.cron = {
-  #   enable = true;
-  #   systemCronJobs = [
-  #     "*/5 * * * *      root    date >> /tmp/cron.log"
-  #   ];
-
-  # };
-
-# systemd.timers."zzztest" = {
-#   wantedBy = [ "timers.target" ];
-#     timerConfig = {
-#       OnBootSec = "5m";
-#       OnUnitActiveSec = "5m";
-#       Unit = "zzztest.service";
-#     };
-# };
-
-# systemd.services."zzztest" = {
-#   script = ''
-#     set -eu
-#     ${pkgs.coreutils}/bin/date >> /tmp/timer.log
-#   '';
-#   serviceConfig = {
-#     Type = "oneshot";
-#     User = "root";
-#   };
-# };
-
 systemd.timers."download-hn" = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
@@ -137,7 +114,7 @@ systemd.timers."download-hn" = {
 systemd.services."download-hn" = {
   script = ''
     set -eu
-    ${pkgs.wget}/bin/wget -O /tmp/hn.xml https://hnrss.org/newest?q=nixos+linux
+    ${pkgs.wget}/bin/wget -O /tmp/hn.xml https://hnrss.org/newest?q=hacking+OR+exploit
   '';
   serviceConfig = {
     Type = "oneshot";
@@ -155,10 +132,6 @@ systemd.services."download-hn" = {
     git
     suricata
 ];
-
-
-  
-  # Configuración de logs de Suricata (opcional)
 
   system.stateVersion="25.05";
 }

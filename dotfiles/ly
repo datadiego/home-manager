@@ -1,0 +1,18 @@
+mcookie_cmd=/run/current-system/sw/bin/mcookie
+path=/run/current-system/sw/bin
+restart_cmd=/run/current-system/systemd/bin/systemctl reboot
+service_name=ly
+shutdown_cmd=/run/current-system/systemd/bin/systemctl poweroff
+term_reset_cmd=/nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/bin/tput reset
+term_restore_cursor_cmd=/nix/store/yw7vb4hamv9mqgbgf7598zvis7k2spyx-ncurses-6.5/bin/tput cnorm
+tty=2
+wayland_cmd=/nix/store/4flhr4wyrp5ng5qhjdgqynhnjqsb3bbw-xsession-wrapper
+waylandsessions=/nix/store/rqa93k1scl84vjs1mb69y3a4zxz28xf7-desktops/share/wayland-sessions
+x_cmd=/nix/store/0hn26j8brrq9hpifi4bisvgpayxwbs5b-xserver-wrapper
+x_cmd_setup=/nix/store/4flhr4wyrp5ng5qhjdgqynhnjqsb3bbw-xsession-wrapper
+xauth_cmd=/nix/store/7kks06087yr9jsb8sv8q8zf9lralanq1-xauth-1.1.4/bin/xauth
+xsessions=/nix/store/rqa93k1scl84vjs1mb69y3a4zxz28xf7-desktops/share/xsessions
+
+[colors]
+foreground = white
+background = black

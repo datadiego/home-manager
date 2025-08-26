@@ -92,6 +92,7 @@ programs.vscode = {
     ".config/i3blocks/config".source = dotfiles/i3blocks;
     ".config/i3blocks/scripts/server-check.sh".source = scripts/server-check.sh;
     ".config/i3blocks/scripts/bateria.sh".source = scripts/bateria.sh;
+    "/etc/ly/config.ini".source = dotfiles/ly;
   };
 
   
