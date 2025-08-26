@@ -1,6 +1,6 @@
-[moñeco]
-command=~/.config/home-manager/scripts/random-kaomoji.sh
-interval=5
+[hn-news]
+command=python3 ~/.config/home-manager/scripts/hackernews.py
+interval=15
 color=#f8f8f2     # blanco suave
 align=center
 

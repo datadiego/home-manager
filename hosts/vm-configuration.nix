@@ -137,7 +137,7 @@ systemd.timers."download-hn" = {
 systemd.services."download-hn" = {
   script = ''
     set -eu
-    ${pkgs.wget}/bin/wget -O /tmp/hn.xml https://hnrss.org/newest?points=100
+    ${pkgs.wget}/bin/wget -O /tmp/hn.xml https://hnrss.org/newest?q=nixos+linux
   '';
   serviceConfig = {
     Type = "oneshot";
