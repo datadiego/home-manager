@@ -97,17 +97,71 @@ services.udev.extraRules = ''
     extraGroups=[ "networkmanager" "wheel"];
   };
 
+  # services.cron = {
+  #   enable = true;
+  #   systemCronJobs = [
+  #     "*/5 * * * *      root    date >> /tmp/cron.log"
+  #   ];
+
+  # };
+
+
+
+# systemd.timers."zzztest" = {
+#   wantedBy = [ "timers.target" ];
+#     timerConfig = {
+#       OnBootSec = "5m";
+#       OnUnitActiveSec = "5m";
+#       Unit = "zzztest.service";
+#     };
+# };
+
+# systemd.services."zzztest" = {
+#   script = ''
+#     set -eu
+#     ${pkgs.coreutils}/bin/date >> /tmp/timer.log
+#   '';
+#   serviceConfig = {
+#     Type = "oneshot";
+#     User = "root";
+#   };
+# };
+
+systemd.timers."download-hn" = {
+  wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "5m";
+      OnUnitActiveSec = "5m";
+      Unit = "download-hn.service";
+    };
+};
+
+systemd.services."download-hn" = {
+  script = ''
+    set -eu
+    ${pkgs.wget}/bin/wget -O /tmp/hn.xml https://hnrss.org/newest?points=100
+  '';
+  serviceConfig = {
+    Type = "oneshot";
+    User = "root";
+  };
+};
+
+
   programs.firefox.enable=true;
-
-
 
   environment.systemPackages = with pkgs; [
     home-manager
+    wget
     firefox
     i3 i3blocks i3status dmenu xterm alacritty
     git
+    suricata
 ];
 
+
+  
+  # Configuración de logs de Suricata (opcional)
 
   system.stateVersion="25.05";
 }

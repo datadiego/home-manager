@@ -59,6 +59,7 @@
   i3 i3blocks i3status dmenu xterm alacritty
   git gh
   vscodium
+  snort
   ];
 
   # programs.mtr.enable = true;

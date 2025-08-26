@@ -12,23 +12,23 @@ in
 
 # Paquetes
   home.packages = [
+	  pkgs.feh
+  	pkgs.xclip
+    pkgs.jq
+    pkgs.tree
+	  pkgs.micro
+    pkgs.xxd
+    pkgs.curl
+    pkgs.wget
 	  pkgs.vscodium
 	  pkgs.rofi
 	  pkgs.alacritty
 	  pkgs.fira-code
 	  pkgs.git
 	  pkgs.gh
-	  pkgs.micro
-  	pkgs.xclip
-	  pkgs.feh
-  	pkgs.glow
   	pkgs.linode-cli
   	pkgs.bitwarden-cli
   	pkgs.bitwarden-desktop
-    pkgs.xxd
-    pkgs.curl
-    pkgs.wget
-    pkgs.jq
     pkgs.python3
     pkgs.uv
   ] ++ cyberPackages;
@@ -39,7 +39,6 @@ programs.firefox = {
     profiles.default = {
       extensions.packages = with nur.repos.rycee.firefox-addons; [
         ublock-origin
-        darkreader
         bitwarden
         foxyproxy-standard
       ];
@@ -94,8 +93,13 @@ programs.vscode = {
     ".config/i3blocks/scripts/bateria.sh".source = scripts/bateria.sh;
   };
 
+  
+  # Establecer variables de entorno para modo oscuro
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    GTK_THEME = "Adwaita-dark";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_STYLE_OVERRIDE = "fusion";
+    MOZ_USE_XINPUT2 = "1";  # Para forzar el modo oscuro en Firefox
   };
 
   programs.home-manager.enable = true;

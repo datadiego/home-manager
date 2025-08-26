@@ -168,7 +168,7 @@ bar {
         separator  #585b70
         focused_workspace  #89b4fa #1e1e2e #ffffff
     }
-    font pango:JetBrains Mono 12
+    font pango:JetBrains Mono 16
 }
 
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4

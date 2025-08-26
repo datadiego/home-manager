@@ -80,7 +80,6 @@ alias toclip="xclip -selection clipboard"
 MICRO_TRUECOLOR=1
 alias nano="micro"
 alias code="codium"
-alias cat='glow'
 alias home-edit="code ~/.config/home-manager"
 gp() {
   git commit -a -m "$1" && git push
