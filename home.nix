@@ -2,7 +2,7 @@
 
 
 let 
-  cyberPackages = import ./cyber-packages.nix { inherit pkgs; };
+  cyberPackages = import ./modules/cyber-packages.nix { inherit pkgs; };
 in 
 {
   home.username = "datadiego";
@@ -29,6 +29,8 @@ in
     pkgs.curl
     pkgs.wget
     pkgs.jq
+    pkgs.python3
+    pkgs.uv
   ] ++ cyberPackages;
 
 # Configuración Git
