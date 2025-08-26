@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
-
 let 
   cyberPackages = import ./modules/cyber-packages.nix { inherit pkgs; };
+  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
 in 
 {
   home.username = "datadiego";
@@ -33,12 +33,26 @@ in
     pkgs.uv
   ] ++ cyberPackages;
 
+programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    profiles.default = {
+      extensions.packages = with nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        darkreader
+        bitwarden
+        foxyproxy-standard
+      ];
+    };
+  };
 # Configuración Git
   programs.git = {
     enable = true;
     userName = "datadiego";
     userEmail = "juandiegomariscal@gmail.com";
 };
+
+
 
 # Configuración Codium
 programs.vscode = {

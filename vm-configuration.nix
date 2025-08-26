@@ -99,13 +99,15 @@ services.udev.extraRules = ''
 
   programs.firefox.enable=true;
 
+
+
   environment.systemPackages = with pkgs; [
     home-manager
     firefox
     i3 i3blocks i3status dmenu xterm alacritty
-    
     git
 ];
+
 
   system.stateVersion="25.05";
 }
