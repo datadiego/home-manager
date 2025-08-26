@@ -105,8 +105,6 @@ services.udev.extraRules = ''
 
   # };
 
-
-
 # systemd.timers."zzztest" = {
 #   wantedBy = [ "timers.target" ];
 #     timerConfig = {
@@ -146,7 +144,6 @@ systemd.services."download-hn" = {
     User = "root";
   };
 };
-
 
   programs.firefox.enable=true;
 
