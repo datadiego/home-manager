@@ -14,5 +14,5 @@ xauth_cmd=/nix/store/7kks06087yr9jsb8sv8q8zf9lralanq1-xauth-1.1.4/bin/xauth
 xsessions=/nix/store/rqa93k1scl84vjs1mb69y3a4zxz28xf7-desktops/share/xsessions
 
 [colors]
-foreground = white
-background = black
+foreground=red
+background=black
