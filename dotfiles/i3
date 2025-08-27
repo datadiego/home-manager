@@ -6,7 +6,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
 
-#exec --no-startup-id feh --bg-scale /home/datadiego/.config/home-manager/seele.jpg
+#exec --no-startup-id feh --bg-scale /home/datadiego/.config/home-manager/wallpaper.png
 # fondo
 exec --no-startup-id sh -c "sleep 1 && feh --bg-scale /home/datadiego/.config/home-manager/seele.jpg"
 
