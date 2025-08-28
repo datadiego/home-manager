@@ -1,7 +1,6 @@
 { pkgs }:
 
 [
-  pkgs.wireshark
   pkgs.tcpdump
   pkgs.nmap
   pkgs.dig

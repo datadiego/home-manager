@@ -32,6 +32,7 @@ in
   	pkgs.bitwarden-desktop
     pkgs.python3
     pkgs.uv
+    pkgs.ollama
   ] ++ cyberPackages;
 
 programs.firefox = {
@@ -92,17 +93,18 @@ programs.vscode = {
     ".config/i3blocks/config".source = dotfiles/i3blocks;
     ".config/i3blocks/scripts/server-check.sh".source = scripts/server-check.sh;
     ".config/i3blocks/scripts/bateria.sh".source = scripts/bateria.sh;
-    "/etc/ly/config.ini".source = dotfiles/ly;
+    ".config/picom/picom.conf".source = dotfiles/picom.conf;
+    # "/etc/ly/config.ini".source = dotfiles/ly;
   };
 
   
-  # Establecer variables de entorno para modo oscuro
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita-dark";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "fusion";
-    MOZ_USE_XINPUT2 = "1";  # Para forzar el modo oscuro en Firefox
-  };
+  # # Establecer variables de entorno para modo oscuro
+  # home.sessionVariables = {
+  #   GTK_THEME = "Adwaita-dark";
+  #   QT_QPA_PLATFORMTHEME = "qt5ct";
+  #   QT_STYLE_OVERRIDE = "fusion";
+  #   MOZ_USE_XINPUT2 = "1";  # Para forzar el modo oscuro en Firefox
+  # };
 
   programs.home-manager.enable = true;
 }
